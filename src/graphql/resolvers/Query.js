@@ -1,4 +1,5 @@
 import Message from "../../models/Message";
+import User from "../../models/User";
 
 const Query = {
   ping() {
@@ -6,6 +7,10 @@ const Query = {
   },
   messages: async () => {
     return await Message.find();
+  }
+  ,
+  users: async () => {
+    return await User.find();
   }
 };
 
