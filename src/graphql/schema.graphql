@@ -1,6 +1,7 @@
 type Query {
   ping: String!
   messages: [Message!]
+  users:[User!]
 }
 
 type Mutation {
@@ -16,4 +17,11 @@ type Message {
   title: String!
   content: String!
   author: String!
+}
+
+type User {
+  _id: ID!
+  name: String!
+  username: String!
+  password: String!
 }
