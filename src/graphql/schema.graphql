@@ -10,6 +10,12 @@ type Mutation {
     content: String!,
     author: String!
   ): Message
+
+  createUser(
+    name: String!,
+    username: String!,
+    password: String!
+  ):User
 }
 
 type Message {
