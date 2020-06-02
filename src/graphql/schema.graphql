@@ -1,29 +1,29 @@
-type Query {
-  ping: String!
-  messages: [Message!]
+type Query { 
   users:[User!]
+  albums:[Album!]
+  fotos:[Foto!]
 }
 
 type Mutation {
-  createMessage(
-    title: String!,
-    content: String!,
-    author: String!
-  ): Message
-
-  createUser(
+   createUser(
     name: String!,
     username: String!,
     password: String!
   ):User
+
+  createAlbum(
+    titulo: String!,
+    autor: String!,
+    lugar:String
+  ):Album 
+
+  createFoto(
+    nombre: String!,
+    descripcion: String!,
+    album: ID!,    
+  ):Foto 
 }
 
-type Message {
-  _id: ID!
-  title: String!
-  content: String!
-  author: String!
-}
 
 type User {
   _id: ID!
@@ -31,3 +31,20 @@ type User {
   username: String!
   password: String!
 }
+
+type Album {
+  _id: ID!
+  titulo: String!
+  autor: String!
+  lugar:String
+  fotos: [Foto!]
+ }
+
+type Foto {
+  _id: ID!
+  nombre: String!
+  descripcion: String!
+  album: Album!
+ }
+
+
